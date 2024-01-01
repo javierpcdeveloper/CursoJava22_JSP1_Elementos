@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <jsp:declaration>
+        private int contadorVisitas=1;
+    </jsp:declaration>
+    <html>
+        <head><title>Ejemplo JSPX</title></head>
+        <body>
+        <li><jsp:text>Ejemplo de elemento text<br/></jsp:text></li>
+        <li>Resultado de 2*3:<jsp:expression>2*3</jsp:expression></li>
+        <jsp:scriptlet>
+            String nombre=request.getContextPath();
+            String valor=request.getParameter("prueba");
+        </jsp:scriptlet>
+        <li>Nombre de la aplicación: <jsp:expression>nombre</jsp:expression></li>
+        <li>Contador de visitas: <jsp:expression>this.contadorVisitas++</jsp:expression></li>
+        <li>Ejemplo de expresión en base a un parámetro:<jsp:expression>valor</jsp:expression></li>
+    </body></html>
+</jsp:root>
